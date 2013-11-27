@@ -1,8 +1,0 @@
-C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\Tester\bin\Debug\Tester.exe.config
-C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\Tester\bin\Debug\Tester.exe
-C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\Tester\bin\Debug\Tester.pdb
-C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\Tester\bin\Debug\Tri.exe
-C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\Tester\bin\Debug\Tri.pdb
-C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
-C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\Tester\obj\Debug\Tester.exe
-C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\Tester\obj\Debug\Tester.pdb

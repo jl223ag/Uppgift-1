@@ -1,0 +1,7 @@
+C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TheTest\bin\Debug\TheTest.dll
+C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TheTest\bin\Debug\TheTest.pdb
+C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TheTest\bin\Debug\Tri.exe
+C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TheTest\bin\Debug\Tri.pdb
+C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TheTest\obj\Debug\TheTest.csprojResolveAssemblyReference.cache
+C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TheTest\obj\Debug\TheTest.dll
+C:\Users\Jocke\Documents\GitHub\Uppgift-1\Triangel\kod\c#\TheTest\obj\Debug\TheTest.pdb

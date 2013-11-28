@@ -7,50 +7,80 @@ namespace Tri
     public class UnitTest1
     {
         [TestMethod]
-        public void isIsoscelesTest() // likbenthet
+        public void isIsoscelesTest() // test av likbent triangel
         {
-            double[] number = new double[3];
-            Triangle tri1 = new Triangle(3.0, 3.0, 1.0);
-            Assert.IsTrue(tri1.isIsosceles() && !tri1.isEquilateral() && !tri1.isScalene()); // likbent - pass
+            Triangle tri = new Triangle(3.0, 3.0, 1.0);
+            Assert.IsTrue(tri.isIsosceles());
 
-            tri1 = new Triangle(2.0, 1.0, 3.0); // inga lika sidor ger false - pass
-            Assert.IsFalse(tri1.isIsosceles() && !tri1.isEquilateral() && !tri1.isScalene());
+            tri = new Triangle(2.0, 1.0, 3.0);
+            Assert.IsFalse(tri.isIsosceles());
+
+            tri = new Triangle(5.0, 5.0, 5.0);
+            Assert.IsFalse(tri.isIsosceles());
         }
 
         [TestMethod]
-        public void isEquilateralTest() // inga lika sidor
+        public void isEquilateralTest() // test av triangel med inga lika sidor
         {
-            Triangle tri2 = new Triangle(5.0, 2.0, 1.0);
-            Assert.IsTrue(tri2.isEquilateral() && !tri2.isScalene() && !tri2.isIsosceles()); // inga lika sidor - pass
+            Triangle tri = new Triangle(5.0, 2.0, 6.0);
+            Assert.IsTrue(tri.isEquilateral());
 
-            tri2 = new Triangle(20.0, 20.0, 5.0);
-            Assert.IsFalse(tri2.isEquilateral() && !tri2.isScalene() && !tri2.isIsosceles()); // 2 lika sidor ger false - pass
+            tri = new Triangle(5.0, 5.0, 6.0);
+            Assert.IsFalse(tri.isEquilateral());
+
+            tri = new Triangle(20.0, 20.0, 20.0);
+            Assert.IsFalse(tri.isEquilateral());
+            
         }
 
         [TestMethod]
-        public void isScaleneTest() // liksidig
+        public void isScaleneTest() // test av liksidig triangel
         {
-            Triangle tri3 = new Triangle(-5.0, -5.0, -5.0); // liksidig (också med negativa tal) - pass
-            Assert.IsTrue(tri3.isScalene() && !tri3.isIsosceles() && !tri3.isEquilateral());
+            Triangle tri = new Triangle(5.0, 5.0, 5.0);
+            Assert.IsTrue(tri.isScalene());
 
-            tri3 = new Triangle(7.0, 7.0, -7.0); // en negativ sida ger false - pass
-            Assert.IsFalse(tri3.isScalene() && !tri3.isIsosceles() && !tri3.isEquilateral());
+            tri = new Triangle(5.0, 7.0, 8.0);
+            Assert.IsFalse(tri.isScalene());
 
-            tri3 = new Triangle(1.0, 2.0, 2.0); // inte likbent ger false - pass
-            Assert.IsFalse(tri3.isScalene() && !tri3.isIsosceles() && !tri3.isEquilateral());    
+            tri = new Triangle(2.0, 2.0, 8.0);
+            Assert.IsFalse(tri.isScalene());             
         }
 
         [TestMethod]
-        public void pointTest() // test av kordinaterna (jag kanske har missuppfattat detta då alla mina tester blev fail, jag tolkade det som kortinaterna Point(x,y) i ett kordinatsystem)
+        public void negativeNumbers()
         {
-            Triangle tri4 = new Triangle(new Point(0, 0), new Point(3, 0), new Point(3, 4)); // likbent - fail (har inga lika sidor)
-            Assert.IsTrue(tri4.isIsosceles() && !tri4.isEquilateral() && !tri4.isScalene());
+            Triangle tri = new Triangle(-5, -5, -5);
+            Assert.IsTrue(tri.isScalene());
+        }
 
-            tri4 = new Triangle(new Point(0, 0), new Point(10, 0), new Point(0, 10));
-            Assert.IsFalse(tri4.isScalene() && !tri4.isEquilateral() && !tri4.isIsosceles()); // liksidig när den borde varit likbent - fail
+        [TestMethod]
+        public void oneNegative()
+        {
+            Triangle tri = new Triangle(44, 22, -33);
+            Assert.IsTrue(tri.isEquilateral());
+        }
 
-            tri4 = new Triangle(new Point(0, 20), new Point(0, 20), new Point(0, 20));
-            Assert.IsTrue(tri4.isScalene() && !tri4.isEquilateral() && !tri4.isIsosceles()); // 3 kordinater på samma punkt bildar en liksidig triangel - fail
+        [TestMethod]
+        public void pointTest1() // inga lika sidor
+        {
+            Triangle tri = new Triangle(new Point(0, 0), new Point(3, 0), new Point(3, 4));
+            Assert.IsTrue(tri.isEquilateral());
+        }
+        
+        [TestMethod]
+        public void pointTest2() // likbent
+        {
+            Triangle tri = new Triangle(new Point(0, 0), new Point(10, 0), new Point(0, 10));
+            Assert.IsTrue(tri.isIsosceles());
+        }
+        
+        [TestMethod]
+        public void pointTest3() // alla kordinater på samma punkt, bildar ingen triangel varför alla borde vara false
+        {            
+            Triangle tri = new Triangle(new Point(0, 20), new Point(0, 20), new Point(0, 20));
+            Assert.IsFalse(tri.isIsosceles());
+            Assert.IsFalse(tri.isScalene());
+            Assert.IsFalse(tri.isEquilateral());
         }
 
         [TestMethod]
